@@ -1,0 +1,218 @@
+<html>
+<head>
+ <title>ajax jquery</title> 
+</head>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Principaux-effets-(transition,-animation)">Principaux effets (transition, animation)<a class="anchor-link" href="#Principaux-effets-(transition,-animation)">&#182;</a></h2><table>
+<thead><tr>
+<th style="text-align:center">Effet</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>animate()</code></td>
+<td style="text-align:left">Anime une ou plusieurs propriété(s) CSS à l'aide d'arguments tels que la durée ou l'accélération de l'animation</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>hide()</code></td>
+<td style="text-align:left">Fait disparaître un élément (et lui donne la propriété <code>display:none</code>)</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>show()</code></td>
+<td style="text-align:left">Fait réapparaître un élément</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>fadeOut()</code></td>
+<td style="text-align:left">Fait disparaître un élément (qui aura la propriété <code>display:none</code>) avec un effet de fondu</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>fadeIn()</code></td>
+<td style="text-align:left">Fait réapparaître un élément avec un effet de fondu</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>slideUp()</code></td>
+<td style="text-align:left">Fait disparaître un élément avec un effet de glissement</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>slideDown()</code></td>
+<td style="text-align:left">Fait réapparaître un élément avec un effet de glissement</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>stop()</code></td>
+<td style="text-align:left">Arrête l'animation en cours</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Ajax-via-jQuery">Ajax via jQuery<a class="anchor-link" href="#Ajax-via-jQuery">&#182;</a></h2><table>
+<thead><tr>
+<th style="text-align:center">Méthode</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>$.ajax()</code> ou <code>jQuery.ajax()</code></td>
+<td style="text-align:left">Exécute une requête Ajax de type GET, POST, PUT, DELETE ou ...</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$.post()</code></td>
+<td style="text-align:left">Exécute une requête Ajax de type POST (raccourci de <code>$.ajax()</code>)</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$.get()</code></td>
+<td style="text-align:left">Exécute une requête Ajax de type GET (raccourci de <code>$.ajax()</code>)</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>load()</code></td>
+<td style="text-align:left">Charge du contenu HTML de manière asynchrone</td>
+</tr>
+</tbody>
+</table>
+<p><div class="alert alert-block alert-info">
+<b>Remarque</b> : 
+Au sein de <code>$.ajax()</code> le paramétrage <code>contentType</code> correspond au <b>type des données envoyées (dans la requête)</b> tandis que le paramétrage <code>dataType</code> correspond au <b>type des données normalement reçues (dans la réponse)</b>.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><em>Exemples (à adapter)</em> :</p>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&quot;ISO-8859-1&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">browse</span><span class="o">-</span><span class="nx">spectacles</span><span class="o">&lt;</span><span class="err">/title&gt;</span>
+    <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;lib/jquery-3.3.1.min.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+    <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;js/my-jq-ajax-util.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+ <span class="c1">// Appel Ajax pour récupérer la liste </span>
+ <span class="c1">// des catégories et remplir le &lt;select&gt;</span>
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+     <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;spectacle-api/public/spectacle/allCategories&quot;</span><span class="p">,</span>
+     <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">status</span><span class="p">,</span><span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">categoryList</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+          <span class="k">for</span><span class="p">(</span><span class="nx">categoryIndex</span> <span class="ow">in</span> <span class="nx">categoryList</span><span class="p">){</span>
+         <span class="kd">var</span> <span class="nx">category</span><span class="o">=</span><span class="nx">categoryList</span><span class="p">[</span><span class="nx">categoryIndex</span><span class="p">];</span>
+          <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;#selectCategory&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span>
+                <span class="s1">&#39;&lt;option value=&quot;&#39;</span><span class="o">+</span> <span class="nx">category</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span><span class="s1">&#39;&quot;&gt;&#39;</span>
+                <span class="o">+</span> <span class="nx">category</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> 
+                <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="nx">category</span><span class="p">.</span><span class="nx">title</span> <span class="o">+</span> <span class="s1">&#39;)&lt;/option&gt;&#39;</span><span class="p">);</span>
+             <span class="p">}</span><span class="c1">//end of for()</span>
+         <span class="c1">//jQuery(&quot;#spanMsg&quot;).html(JSON.stringify(data));</span>
+              <span class="p">}</span><span class="c1">//end of if(data)</span>
+           <span class="p">},</span>
+      <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span> <span class="p">){</span>
+                   <span class="nx">jQuery</span><span class="p">(</span><span class="s2">&quot;#spanMsg&quot;</span><span class="p">)</span>
+                   <span class="p">.</span><span class="nx">html</span><span class="p">(</span> <span class="nx">xhrStatusToErrorMessage</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">));</span>
+               <span class="p">}</span>
+    <span class="p">});</span><span class="c1">//end jQuery.ajax</span>
+ <span class="p">});</span>    
+
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+<span class="o">&lt;</span><span class="err">/head&gt;</span>
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span> <span class="nx">BROWSE</span> <span class="nx">Spectacles</span> <span class="o">&lt;</span><span class="err">/h3&gt;</span>
+   <span class="nx">categorie</span> <span class="o">:</span> <span class="o">&lt;</span><span class="nx">select</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;selectCategory&quot;</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="sr">/select&gt;&lt;br/</span><span class="o">&gt;</span>
+  <span class="p">...</span>   <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;spanMsg&quot;</span><span class="o">&gt;&lt;</span><span class="sr">/span&gt; &lt;br/</span><span class="o">&gt;</span><span class="p">...</span>
+<span class="o">&lt;</span><span class="err">/body&gt;</span>
+<span class="o">&lt;</span><span class="err">/html&gt;</span>
+</pre></div>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Fonctions utilitaires dans  js/my-jq-ajax-util.js</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">setSecurityTokenForAjax</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">authToken</span> <span class="o">=</span> <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;authToken&quot;</span><span class="p">);</span> 
+     <span class="c1">//or localStorage.getItem(&quot;authToken&quot;);</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ajaxSend</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//retransmission du jeton d&#39;authentification</span>
+        <span class="c1">//dans l&#39;entête http de la requete ajax</span>
+         <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">&#39;Authorization&#39;</span><span class="p">,</span><span class="s2">&quot;Bearer &quot;</span><span class="o">+</span> <span class="nx">authToken</span><span class="p">);</span>
+     <span class="p">});</span>
+
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">xhrStatusToErrorMessage</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">errMsg</span> <span class="o">=</span> <span class="s2">&quot;ajax error&quot;</span><span class="p">;</span><span class="c1">//by default</span>
+    <span class="kd">var</span> <span class="nx">detailsMsg</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">;</span> <span class="c1">//by default</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;jqXHR.status=&quot;</span><span class="o">+</span><span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+    <span class="k">switch</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">.</span><span class="nx">status</span><span class="p">){</span>
+        <span class="k">case</span> <span class="mf">400</span> <span class="o">:</span> 
+            <span class="nx">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Server understood the request, but request content was invalid.&quot;</span><span class="p">;</span> 
+            <span class="k">if</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">.</span><span class="nx">responseText</span><span class="o">!=</span><span class="kc">null</span><span class="p">)</span> 
+                <span class="nx">detailsMsg</span> <span class="o">=</span> <span class="nx">jqXHR</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mf">401</span> <span class="o">:</span> 
+            <span class="nx">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Unauthorized access (401)&quot;</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mf">403</span> <span class="o">:</span> 
+            <span class="nx">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Forbidden resource can&#39;t be accessed (403)&quot;</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mf">404</span> <span class="o">:</span> 
+            <span class="nx">errMsg</span> <span class="o">=</span> <span class="s2">&quot;resource not found (404)&quot;</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mf">500</span> <span class="o">:</span> 
+            <span class="nx">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Internal server error (500)&quot;</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mf">503</span> <span class="o">:</span> 
+            <span class="nx">errMsg</span> <span class="o">=</span> <span class="s2">&quot;Service unavailable (503)&quot;</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">errMsg</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="nx">detailsMsg</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Variation en mode "POST" et "application/x-www-form-urlencoded"</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">dataJsObject</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">prenom</span> <span class="o">:</span> <span class="s2">&quot;jean&quot;</span><span class="p">,</span>   <span class="nx">nom</span> <span class="o">:</span> <span class="s2">&quot;Bon&quot;</span> <span class="p">,</span>     <span class="nx">taille</span><span class="o">:</span> <span class="mf">175</span>     <span class="p">}</span> <span class="p">;</span>
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;./my-api/person&quot;</span><span class="p">,</span>            
+    <span class="nx">contentType</span> <span class="o">:</span> <span class="s2">&quot;application/x-www-form-urlencoded; charset=utf-8&quot;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="nx">dataJsObject</span><span class="p">),</span>
+    <span class="nx">dataType</span> <span class="o">:</span> <span class="s1">&#39;json_or_text_or_...&#39;</span><span class="p">,</span>
+    <span class="nx">beforeSend</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span> <span class="p">(</span><span class="s2">&quot;Authorization&quot;</span><span class="p">,</span> 
+                           <span class="s2">&quot;Basic &quot;</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">&quot;usernameXy&quot;</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="s2">&quot;passwordXy&quot;</span><span class="p">));</span>
+                    <span class="p">},</span>
+    <span class="nx">success</span><span class="o">:</span> <span class="p">...</span> <span class="p">,</span> 
+    <span class="nx">error</span><span class="o">:</span> <span class="p">....</span>
+<span class="p">});</span><span class="c1">//end jQuery.ajax</span>
+</pre></div>
+<p>Variation en mode "POST" et "JSON" in / out :</p>
+<div class="highlight"><pre><span></span><span class="c1">//setSecurityTokenForAjax();//js/my-jq-ajax-util.js</span>
+<span class="nx">jQuery</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;spectacle-api/spectacle&quot;</span><span class="p">,</span>
+    <span class="nx">data</span> <span class="o">:</span> <span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">spectacleAdditionJsObject</span><span class="p">),</span>
+    <span class="nx">dataType</span> <span class="o">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
+    <span class="nx">contentType</span> <span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">status</span><span class="p">,</span><span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nx">jQuery</span><span class="p">(</span><span class="s2">&quot;#spanMsg&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+                    <span class="p">}</span> 
+    <span class="p">},</span>
+    <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span> <span class="p">){</span>
+        <span class="nx">jQuery</span><span class="p">(</span><span class="s2">&quot;#spanMsg&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span> <span class="nx">xhrStatusToErrorMessage</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">)</span>  <span class="p">)</span> <span class="p">;</span>
+    <span class="p">}</span>
+ <span class="p">});</span><span class="c1">//end jQuery.ajax</span>
+</pre></div>
+
+</div>
+</div>
+</body>
+
+
