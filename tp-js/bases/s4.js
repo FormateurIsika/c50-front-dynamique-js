@@ -13,6 +13,14 @@ console.log(JSON.stringify(ventesPapeterie));
 console.log("chiffreAffaireTtc pour papeterie:" 
             +ventesPapeterie.chiffreAffaireTtc(20.0));
 
+let ventesPjson = JSON.stringify(ventesPapeterie);  
+let cloneDeVentesPap = JSON.parse(ventesPjson);
+cloneDeVentesPap.chiffreAffaireHt=2000;
+console.log(JSON.stringify(ventesPapeterie));
+console.log(JSON.stringify(cloneDeVentesPap));
+
+
+
 
 var tabVentes = [ ventesPapeterie ];
 tabVentes.push(new Ventes("vins" , 15688.6));
