@@ -41,9 +41,7 @@ var devise1 = {
 /* construire en syntaxe 'litteral' un objet javascript correspondant à une personne
 numero , prenom , nom , 
 sous objet adresse comporte lui meme (num, rue , codePostal , ville)
--------
-afficher tout l'objet au format JSON
--------
+-- afficher tout l'objet au format JSON -------
 récupérer et afficher le codePostal de l'adresse de la personne
 */
 
@@ -61,6 +59,14 @@ function Devise(code, nom, change){
                    + this.nom + " : " + this.change)
     }
 }
+
+/*
+TP à faire :
+Créer un constructeur d'objet Cercle(xc ,yc , rayon, couleur)
+avec une méthode display et aussi une méthode qui calcule le perimetre du cercle
+----------
+test : on créer un cercle et on appelle les méthodes dessus
+*/
 
 var tabDevises = [];
 tabDevises.push(new Devise("USD","Dollar",1.0));
