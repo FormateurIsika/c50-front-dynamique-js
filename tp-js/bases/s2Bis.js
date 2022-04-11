@@ -22,7 +22,7 @@ function Cercle(xc,yc,rayon,couleur){
     this.couleur = couleur;
     this.display = function(){
         console.log('Cercle de centre (' + this.xc + "," + this.yc + ") " 
-                   + " de reyon " + this.rayon + " et de couleur = " + this.couleur)
+                   + " de rayon " + this.rayon + " et de couleur = " + this.couleur)
     }
     this.perimetre = function(){
         return 2 * Math.PI * this.rayon ;
@@ -43,3 +43,13 @@ console.log("couleur de c2 ="+c2.couleur);
 
 c2.epaisseur = 2; //possibilité d'ajouter des attributs et méthodes non prévus
 console.log("c2 au format JSON="+JSON.stringify(c2));
+
+/*
+Cercle de centre (10,15)  de rayon 100 et de couleur = blue
+c1 au format JSON={"xc":10,"yc":15,"rayon":100,"couleur":"blue"}
+perimetre de c1 =628.3185307179587
+rayon de c1 =100
+c2 au format JSON={"xc":10,"yc":15,"rayon":200}
+couleur de c2 =undefined
+c2 au format JSON={"xc":10,"yc":15,"rayon":200,"epaisseur":2}
+*/
