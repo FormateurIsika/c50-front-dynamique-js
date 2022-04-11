@@ -12,10 +12,28 @@ function enchainerConversionCalculEtAffichage(sx,fctCalcul,fctAff){
 
 function diviserPar2(x){
     return x/2;
-}    
+} 
+
+function multiplierPar2(x){
+    return x*2;
+} 
 
 function affV1(chose){
     console.log(">>"+chose);
 }
 
+function affV2(chose){
+    console.log(">>>"+chose+"<<<");
+}
+
 enchainerConversionCalculEtAffichage("20" , diviserPar2 , affV1);
+enchainerConversionCalculEtAffichage("50" , multiplierPar2 , affV2);
+enchainerConversionCalculEtAffichage("50" , 
+                                      function(x) { return x*2; } ,
+                                      function (chose){ 
+                                          console.log("** "+chose+" **");
+                                        });
+enchainerConversionCalculEtAffichage("50" , 
+              (x) => { return x*2; } ,
+             (chose) => { console.log("## "+chose+" ##");   }
+             );                                        
