@@ -1,9 +1,9 @@
 function Ventes(secteur, chiffreAffaireHt){
     //.... code à compléter
-   this.....=....;
-   this.....=.....;
+   this.secteur=secteur;
+   this.chiffreAffaireHt=chiffreAffaireHt;
    this.chiffreAffaireTtc = function(tauxTvaPct){
-       return (1 + tauxTvaPct/100) * this........;
+       return (1 + tauxTvaPct/100) * this.chiffreAffaireHt;
    }
 }
 
@@ -22,6 +22,11 @@ tabVentes.push(new Ventes("viandes" , 21789.96));
 
 function chiffreAffaireHtTotal(tabVentes){
   //.... code à compléter
+  let totalCa = 0;
+  for(let i in tabVentes){
+    totalCa+=tabVentes[i].chiffreAffaireHt;
+  }
+  return totalCa;
 }
 
 var ca_total = chiffreAffaireHtTotal(tabVentes);
@@ -30,7 +35,14 @@ console.log("chiffreAffaireHtTotal="+ca_total); //exemple: 115057.41
 //supprimer l'élément "vins" du tableau tabVentes
 //d'indice 0+1 puis réafficher le tableau tabVentes
 //(avec éléments restants) au format JSON
-
+let indiceVin = -1;
+for(let i in tabVentes){
+    if(tabVentes[i].secteur == "vins"){
+        indiceVin = i; break;
+    }
+}
+//delete tabVentes[indiceVin];
+tabVentes.splice(indiceVin,1)//remplace tabVentes[indiceVin] par rien et doc supprime
 
 //.... code à compléter
 
