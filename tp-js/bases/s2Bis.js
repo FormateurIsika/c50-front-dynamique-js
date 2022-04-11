@@ -35,3 +35,11 @@ console.log("c1 au format JSON="+JSON.stringify(c1));
 console.log("perimetre de c1 =" + c1.perimetre());
 //console.log("rayon de c1 =" + c1.rayon); 
 console.log("rayon de c1 =" + c1["rayon"]);
+
+var c2 = new Cercle(10,15,200);//couleur non précisée 
+//(valeur par défaut "undefined" pour dernier(s) paramètre(s))
+console.log("c2 au format JSON="+JSON.stringify(c2));
+console.log("couleur de c2 ="+c2.couleur);
+
+c2.epaisseur = 2; //possibilité d'ajouter des attributs et méthodes non prévus
+console.log("c2 au format JSON="+JSON.stringify(c2));
