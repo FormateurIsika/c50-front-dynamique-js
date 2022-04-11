@@ -1,0 +1,21 @@
+/* paramètres de enchainerCalculEtAffichage() :
+sx = nombre dans une string ,
+fctCalcul = reference vers une fonction de calcul
+fctAff = reference vers fonction affichage
+*/
+function enchainerConversionCalculEtAffichage(sx,fctCalcul,fctAff){
+    let x = Number(sx);
+    let resCalcul = fctCalcul(x);
+    let xEtResJson = JSON.stringify({ x: x , res: resCalcul });
+    fctAff(xEtResJson);
+    }
+
+function diviserPar2(x){
+    return x/2;
+}    
+
+function affV1(chose){
+    console.log(">>"+chose);
+}
+
+enchainerConversionCalculEtAffichage("20" , diviserPar2 , affV1);
