@@ -13,7 +13,6 @@
  <script src="js/my_ajax_util.js"></script>
  <script src="js/my_switch_div.js"></script>
  <script src="js/dom_crud_devise.js"></script>
- <script src="js/calculs.js"></script>
 <script>
 
 
@@ -90,31 +89,8 @@ window.onload=function(){
 			</table>
 		</div>
 		<div id="idSubPart_pb" class="alternativeSubPart">
-		  <div class="m-2 p-1">
-            <ul class="nav nav-pills"> <!-- nav-tabs or nav-pills -->
-				<li class="nav-item"><a class="nav-link active" href="#id_tabAddition" data-toggle="tab">addition</a></li>
-				<li class="nav-item" ><a class="nav-link" href="#id_tabTva" data-toggle="tab">calcul tva</a></li>
-		    </ul>
-
-			<div class="tab-content">
-				<div id="id_tabAddition" class="tab-pane show active p-1 border border-primary">
-					<label>a:</label><input id="txtA" /><br/>
-					<label>b:</label><input id="txtB" /><br/>
-					<input type="button" value="addition" 
-						onclick="calculAdd()"/><br/>
-					<label>a+b: </label> <span id="resAdd"></span>
-				</div><!--end of id_tabAddition -->
-				<div id="id_tabTva" class="tab-pane  p-1 border border-primary">
-					<label>ht:</label><input id="txtHt" /><br/>
-					<label>taux tva (%):</label><input id="txtTauxTvaPct" /><br/>
-					<input type="button" value="calculer tva et ttc" 
-						onclick="calculTvaEtTtc()"/><br/>
-					<label>tva: </label> <span id="spanTva"></span><br/>
-					<label>ttc: </label> <span id="spanTtc"></span><br/>
-				</div><!--end of id_tabTva -->				
-			</div>	<!--end of tab-content -->
-          </div><!--end of m-2 p-1 -->
-   		</div><!--end of partie b -->
+		 pb ...
+		</div>
 	  </section>
    </main>
    <footer class="stickyFooter">
