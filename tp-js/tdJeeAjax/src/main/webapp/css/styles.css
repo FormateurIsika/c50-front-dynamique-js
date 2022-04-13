@@ -1,0 +1,5 @@
+.c1 { color : red; }
+
+thead  tr { background-color : white; color: blue;}
+tbody  tr:nth-child(2n)   { background-color : orange; }
+tbody  tr:nth-child(2n+1) { background-color : lightrey; }
