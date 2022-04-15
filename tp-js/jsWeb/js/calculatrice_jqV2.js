@@ -19,7 +19,7 @@ function ajouterDansHistorique(a,b,op,res){
 
 $(function() {
    // Code déclenché dès le chargement de la page HTML :
-   // $("#spanRes").html("0+0=0");
+   $('#cbHisto').prop("checked",false);
 
    $('#btnAdd').on("click",function(){ calculer('+');  });
    $('#btnMoins').on("click",function(){ calculer('-');  });
@@ -31,21 +31,11 @@ $(function() {
        var estCoche = $("#cbHisto").prop("checked");
        //var estCoche = ($("#cbHisto").get(0)).checked;
        console.log("estCoche="+estCoche);
-        //V1:
-        //$("#ulHistorique").css("display",estCoche?"block":"none");
-        /*
-        //V2:
+        
         if(estCoche)
-            $("#ulHistorique").show();
+            $("#bodyCardHisto").addClass("show");
          else
-           $("#ulHistorique").hide();
-       */
-        //V3 (avec effet ):
-        if(estCoche)
-            //$("#ulHistorique").fadeIn(1800);//400ms par defaut
-            $("#ulHistorique").slideDown(800);//400ms par defaut
-         else
-           //$("#ulHistorique").fadeOut(1800);
-           $("#ulHistorique").slideUp(800);//400ms par defaut
+           $("#bodyCardHisto").removeClass("show");
+      
    });
 });
