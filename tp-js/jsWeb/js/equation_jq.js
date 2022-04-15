@@ -1,13 +1,20 @@
 $(function(){
    //fonction anonyme déclenchée automatiquement au chargement de la page
    $("#btnRefresh").on("click",reactualiserTableau);
+   $("#inputMaxX").on("input",function (evt){
+       //console.log("nouvelle valeur de maxX="+$("#inputMaxX").val());
+       //console.log("nouvelle valeur de maxX="+evt.target.value); //.value api DOM
+       console.log("nouvelle_valeur de maxX="+$(evt.target).val());//.val() jQuery
+   })
 })
 
-function reactualiserTableau(){
+//function reactualiserTableau(){
+var  reactualiserTableau = function (){   
+//var  reactualiserTableau =  () => { 
     let minX = Number($("#inputMinX").val());
     let maxX = Number($("#inputMaxX").val());
-    let minY=0;
-    let maxY=0;
+    let minY=10000;
+    let maxY=-10000;
     let pointValues=[]; 
     let n= 10;
     let dx  = (maxX - minX) / n ;
@@ -17,12 +24,19 @@ function reactualiserTableau(){
     for(let x= minX; x <= maxX; x = x + dx ){
         let y = calculerYselonX(x);
         $("tbody").append("<tr><td>"+x+"</td><td>"+y+"</td></tr>");
+
         pointValues.push({x:x,y:y});
         if(y<=minY) minY=y;
 		if(y>=maxY) maxY=y;
     }
     var dy=(maxY-minY)/100;
     reactualiserCourbe(pointValues,minX,maxX,minY,maxY,dx,dy);
+}
+
+function calculerYselonX(x){
+    let sY = $("#inputY").val(); //ex: "2*x+1"
+    let y = eval(sY); //ex: 3 si x vaut 1
+    return y; //ou ...
 }
 
 function reactualiserCourbe(pointValues,minX,maxX,minY,maxY,dx,dy){
@@ -73,8 +87,4 @@ function reactualiserCourbe(pointValues,minX,maxX,minY,maxY,dx,dy){
       });
 }
 
-function calculerYselonX(x){
-    let sY = $("#inputY").val(); //ex: "2*x+1"
-    let y = eval(sY); //ex: 3 si x vaut 1
-    return y; //ou ...
-}
+
