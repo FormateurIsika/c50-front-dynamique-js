@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>equation</title>
+    <meta charset="UTF-8">
+    <script src="./lib/jquery.min.js" ></script> <!-- À adapter en fonction du fichier jQuery utilisé -->
+    <script src="./js/equation_jq.js" ></script>
+    <link rel="stylesheet" href="./css/styles.css" type="text/css" > 
+</head>
+<body id="main" >
+
+   <h1 id="titre1" >equation</h1>
+
+   minX: <input class="enEvidence" id="inputMinX" type="text" value="0" /> <br/>
+   maxX: <input class="enEvidence" id="inputMaxX" type="text" value="10" /> <br/>
+   y: <input class="enEvidence" id="inputY" type="text" value="2*x+1" /> <br/>
+   <input value="re-actualiser" id="btnRefresh" type="button" />
+   
+  <table border="1">
+      <thead>
+         <tr><th>x</th><th>y</th></tr>
+      </thead>
+      <tbody>
+           <!-- <tr><td>1</d><td>3</td></tr> -->
+      </tbody>
+  </table> 
+
+</body>
+</html>

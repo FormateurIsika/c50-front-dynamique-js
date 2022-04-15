@@ -4,7 +4,7 @@ window.onload = function(){
     let eltSelCategorie = document.getElementById("selCategorie");
     
     eltSelCategorie.addEventListener("change",function (evt){
-        let categorieChoisie = eltSelCategorie.value;
+        let categorieChoisie = eltSelCategorie.value ;
         console.log("categorie choisie:" +categorieChoisie );
         let url = "./data/products_" + categorieChoisie +".json";
         makeAjaxGetRequest(url,callbackProduitsSucces,callbackError);
