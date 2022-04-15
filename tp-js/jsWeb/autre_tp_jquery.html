@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>selection multiple</title>
+    <meta charset="UTF-8">
+    <script src="./lib/jquery.min.js" ></script>
+    <script src="./js/selection_jq.js" ></script> 
+    <script src="./js/dessin_jq.js" ></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="./css/styles.css" type="text/css" > 
+</head>
+<body id="main" >
+<div class="container-fluid">
+   <h1>selection multiple</h1>
+
+   <!-- à faire en Tp (partie 2): affichage sur 3 colonnes via bootstrap -->
+   <div class="row">
+      <div class="card col-sm-4">
+            <div class="card-header bg-primary text-white">disponibles</div>
+            <div class="card-body">
+               <select multiple id="listeDisponibles" size="8" style="width: 10em;">
+               <!-- <option>...</option> -->
+               </select>
+            </div>
+      </div>
+      <div class="card col-sm-4">
+         <div class="card-body">
+            <p></p>
+            <p></p>
+            <input value="selectionner --->" id="btnSelect" type="button" /> <br/>
+            <p></p>
+            <p></p>
+            <input value="<--- deSelectionner" id="btnDeselect" type="button" />
+         </div>
+     </div>
+      <div class="card col-sm-4">
+         <div class="card-header bg-primary text-white">selectionnes</div>
+         <div class="card-body">
+            <select multiple id="listeSelections" size="8" style="width: 10em;">
+               <!-- <option>...</option> -->
+            </select>  
+         </div> 
+      </div>
+   </div>
+   <hr/>
+   eltDisponibles: <span id="spanEltDisponibles"></span> <br/>
+   eltSelectionnes: <span id="spanEltSelectionnes"></span> <br/>
+   <hr/>
+   x=<span id="spanX"></span> y=<span id="spanY"></span> <br/>
+   <canvas width="400" height="300" id="mycanvas"></canvas><br/>
+   <button id="btnEffacer">effacer</button>
+</div>
+</body>
+</html>
