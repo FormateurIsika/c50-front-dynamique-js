@@ -3,36 +3,42 @@
     <title>calculatrice</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <script src="./lib/jquery.min.js" ></script> <!-- À adapter en fonction du fichier jQuery utilisé -->
+    <script src="./lib/jquery.min.js" ></script> <!-- a adapter en fonction du fichier jQuery utilisé -->
     <script src="./js/calculatrice_jqV2.js" ></script>
     <link rel="stylesheet" href="./css/styles.css" type="text/css" > 
 </head>
 <body id="main" >
  <div class="container-fluid">
    <h1 id="titre1" >calculatrice V2</h1>
+  <hr/>
   <div class="row" >
        <div class="col-sm-6 p-1" >
-         a: <input class="enEvidence" id="inputA" type="text" /> <br/>
-         b: <input class="enEvidence" id="inputB" type="text" /> <br/>
-         <input value="+" id="btnAdd" type="button" />
-         <input value="-" id="btnMoins" type="button" />
-         <input value="*" id="btnMult" type="button" />
-         <input value="/" id="btnDiv" type="button" /><br/>
-         res:<span class="enEvidence" id="spanRes"></span>
-
+         <div class="card">
+            <div class="card-header text-white bg-primary">calcul </div>
+               <div class="card-body">
+                  a: <input class="enEvidence" id="inputA" type="text" /> <br/>
+                  b: <input class="enEvidence" id="inputB" type="text" /> <br/>
+                  <input value="+" id="btnAdd" type="button" />
+                  <input value="-" id="btnMoins" type="button" />
+                  <input value="*" id="btnMult" type="button" />
+                  <input value="/" id="btnDiv" type="button" /><br/>
+                  res:<span class="enEvidence" id="spanRes"></span>
+               </div> <!-- end of card-body -->
+         </div> <!-- end of card -->
        </div> <!-- end of colonne 1 -->
        <div class="col-sm-6 p-1" >
-         <input  type="checkbox" id="cbHisto" /> Montrer historique
          <div class="card">
-         <div class="card-header text-white bg-primary">historique des calculs</div> 
-         <div id="bodyCardHisto" class="card-body collapse">
-         <!-- <div class="card-body collapse show">
-         $(...).addClass("show")  ou $(...).removeClass("show")
-         -->
-               <ul id="ulHistorique" >
-                  <!-- <li>2*3=6</li> -->
-               </ul>
-         </div> <!-- end of card-body -->
+            <div class="card-header text-white bg-primary">
+               <input  type="checkbox" id="cbHisto" />
+               historique des calculs</div> 
+            <div id="bodyCardHisto" class="card-body collapse">
+            <!-- <div class="card-body collapse show">
+            $(...).addClass("show")  ou $(...).removeClass("show")
+            -->
+                  <ul id="ulHistorique" >
+                     <!-- <li>2*3=6</li> -->
+                  </ul>
+            </div> <!-- end of card-body -->
          </div> <!-- end of card -->
       </div> <!-- end of colonne 2 -->
    </div> <!-- end of row -->
