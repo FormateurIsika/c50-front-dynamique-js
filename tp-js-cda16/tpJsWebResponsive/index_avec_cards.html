@@ -65,27 +65,38 @@
 			<div id="idSubPart_pa" class="alternativeSubPart">
 				pa ...
 			</div>
-			<div id="idSubPart_pb" class="alternativeSubPart p-1">
-                <ul class="nav nav-pills mt-1"> <!-- nav-tabs or nav-pills -->
-					<li class="nav-item"><a class="nav-link active" href="#id_tab_addition" data-toggle="tab">addition</a></li>
-					<li class="nav-item"><a class="nav-link" href="#id_tab_tva" data-toggle="tab">calcul tva</a></li>
-			    </ul>
-			 
-			    <div class="tab-content">
-					<div id="id_tab_addition" class="tab-pane show active container-fluid p-1 border border-primary">
-						<label>a:</label><input id="txtA" /><br />
-						<label>b:</label><input id="txtB" /><br />
-						<input type="button" value="addition" onclick="calculAdd()" /><br />
-						<label>a+b: </label> <span id="resAdd"></span>
-					</div>
-					<div id="id_tab_tva" class="tab-pane container-fluid p-1 border border-primary">
-					    <label>ht:</label><input id="txtHt" /><br />
-						<label>taux tva (%):</label><input id="txtTauxTvaPct" /><br />
-						<input type="button" value="calculer tva et ttc" onclick="calculTvaEtTtc()" /><br />
-						<label>tva: </label> <span id="spanTva"></span><br />
-						<label>ttc: </label> <span id="spanTtc"></span><br />
-					</div>
-			    </div><!-- end of tab-content-->
+			<div id="idSubPart_pb" class="alternativeSubPart">
+				<div class="row">
+					<div class="col-sm-6  mb-1">
+						<div class="card">
+							<div class="card-header text-white bg-primary">
+								<a data-toggle="collapse" class="text-light"
+								href="#collapse_addition">addition</a>
+							</div>
+							<div class="card-body collapse show" id="collapse_addition">
+								<label>a:</label><input id="txtA" /><br />
+								<label>b:</label><input id="txtB" /><br />
+								<input type="button" value="addition" onclick="calculAdd()" /><br />
+								<label>a+b: </label> <span id="resAdd"></span>
+							</div> <!-- end of card-body -->
+						</div> <!-- end of card -->
+					</div> <!-- end of col-sm-6 -->
+					<div class="col-sm-6  mb-1">
+						<div class="card">
+							<div class="card-header text-white bg-primary">
+								<a data-toggle="collapse" class="text-light"
+								href="#collapse_tva">tva et ttc</a>
+							</div>
+							<div class="card-body collapse show" id="collapse_tva">
+								<label>ht:</label><input id="txtHt" /><br />
+								<label>taux tva (%):</label><input id="txtTauxTvaPct" /><br />
+								<input type="button" value="calculer tva et ttc" onclick="calculTvaEtTtc()" /><br />
+								<label>tva: </label> <span id="spanTva"></span><br />
+								<label>ttc: </label> <span id="spanTtc"></span><br />
+							</div> <!-- end of card-body -->
+						</div> <!-- end of card -->
+					</div><!-- end of col-sm-6 -->
+				</div> <!-- end of row -->
 			</div><!-- end of partie b -->
 			<div id="idSubPart_pc" class="alternativeSubPart container-fluid p-0 m-0">
 				<div class="row p-0 m-0">
