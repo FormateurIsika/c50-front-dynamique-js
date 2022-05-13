@@ -19,7 +19,7 @@ function callbackProduitsSucces(responseData){
     let ulProduits = document.getElementById("ulProduits");
     ulProduits.innerHTML="" ; //vider eventuel ancien contenu de <ul></ul>
     for(i in tabProduits){
-        var eltLiProd = document.createElement("li") ; //nouvel <li></li>
+        let eltLiProd = document.createElement("li") ; //nouvel <li></li>
         eltLiProd.innerHTML=JSON.stringify(tabProduits[i]);
         ulProduits.appendChild(eltLiProd);
     }
