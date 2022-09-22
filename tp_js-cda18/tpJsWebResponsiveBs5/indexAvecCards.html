@@ -101,8 +101,10 @@ window.onload=function(){
           </div>
           <div class="col-sm-6">
              <div class="card m-1">
-                  <div class="card-header bg-primary text-light">calcul de tva</div>
-                  <div class="card-body">
+              <div class="card-header bg-primary text-light">
+                <a  class="text-light" data-bs-toggle="collapse" data-bs-target="#collapseTva">calcul tva</a>
+               </div>
+               <div id="collapseTva" class="card-body collapse show">
                       <label>ht:</label><input id="txtHt" /><br/>
                       <label>taux tva (%):</label><input id="txtTauxTvaPct" /><br/>
                       <input type="button" value="calculer tva et ttc" 
