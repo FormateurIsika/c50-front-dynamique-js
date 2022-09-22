@@ -2,7 +2,7 @@
 <head>
 <title>tpJsWebResponsiveSansMenuDeroulant</title>
  <link rel="stylesheet" href="./css/bootstrap.min.css"> 
- 
+ <link rel="stylesheet" href="./bootstrap-icons-1.9.1/bootstrap-icons.css" >
  <link rel="stylesheet" type="text/css" href="css/layout.css" />
  <link rel="stylesheet" type="text/css" href="css/styles.css" />
  
@@ -26,7 +26,7 @@ window.onload=function(){
    <header class="stickyHeader">
      <h3 id="appTitle">My-App</h3>
 	  <nav>
-		<input type="button" class="btn-primary" value="welcome" onclick="switchSubPart('idWelcomeSubPart')"  /> -   
+		<button class="btn-primary"  onclick="switchSubPart('idWelcomeSubPart')"  > Welcome <i class="bi bi-people"></i> </button>  
 		<input type="button" class="btn-primary" value="partie a" 
 		      onclick="switchSubPart('idSubPart_pa',startDomCrudDevise)" /> -
 		<input type="button" class="btn-primary" value="partie b" onclick="switchSubPart('idSubPart_pb')" /> - 
@@ -36,7 +36,7 @@ window.onload=function(){
    <main id="mainContent" class="mainContentUnderStickyHeader mainContentAboveStickyFooter">
 	<section class="container-fluid">
 	    <div id="idWelcomeSubPart" class="defaultSubPart">
-		 Welcome ...
+		 Welcome ... <i class="bi bi-people"></i>
 		</div>
 		<div id="idSubPart_pa" class="alternativeSubPart">
       <h3 style="text-align: center;">CRUD en mémoire via javascript et api DOM</h3>
@@ -95,7 +95,7 @@ window.onload=function(){
               <div class="tab-content">
                  <div id="id_tab_addition" 
                       class="tab-pane container-fluid show active
-                             p-1 border border-primary">
+                            p-1 border border-primary">
                    <label>a:</label><input id="txtA" /><br/>
                     <label>b:</label><input id="txtB" /><br/>
                     <input type="button" value="addition" 
