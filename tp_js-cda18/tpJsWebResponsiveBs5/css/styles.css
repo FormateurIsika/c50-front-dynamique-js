@@ -44,7 +44,7 @@ thead th {
 }
 
 .small-zoom {
-  transform: scale(0.98);
+  transform: scale(0.92);
   transition: 0.6s;
 }
 
@@ -52,5 +52,7 @@ thead th {
   transform: scale(1);
   border-width: 4px;
   border-style: solid;
-  border-color: red;
+  border-color: rgb(42, 11, 180);
 }
+
+.c1 { color : green; }

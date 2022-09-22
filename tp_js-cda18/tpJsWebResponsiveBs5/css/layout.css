@@ -32,3 +32,5 @@ main#mainContent {
   .mainContentAboveStickyFooter{
 	  margin-bottom: 2.5rem; /* Add a bottom margin to avoid content overlay */
   }
+
+  .c1 { color : red !important; }
