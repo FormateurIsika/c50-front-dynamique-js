@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>tpJsWebResponsiveSansMenuDeroulant</title>
+ <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+ 
+ <link rel="stylesheet" type="text/css" href="css/layout.css" />
+ <link rel="stylesheet" type="text/css" href="css/styles.css" />
+ 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- for responsive bootstrap on mobile device -->
+
+ <script src="lib/bootstrap.bundle.min.js"></script>
+
+ <script src="js/my_ajax_util.js"></script>
+ <script src="js/my_switch_div.js"></script>
+ <script src="js/dom_crud_devise.js"></script>
+ <script src="js/calculs.js"></script>
+<script>
+
+
+window.onload=function(){
+		switchSubPart('idWelcomeSubPart')
+}
+</script>
+</head>
+<body>
+   <header class="stickyHeader">
+     <h3 id="appTitle">My-App</h3>
+	  <nav>
+		<input type="button" class="btn-primary" value="welcome" onclick="switchSubPart('idWelcomeSubPart')"  /> -   
+		<input type="button" class="btn-primary" value="partie a" 
+		      onclick="switchSubPart('idSubPart_pa',startDomCrudDevise)" /> -
+		<input type="button" class="btn-primary" value="partie b" onclick="switchSubPart('idSubPart_pb')" /> - 
+		<input type="button" class="btn-primary" value="partie c" onclick="switchSubPart('idSubPart_pc')" /> - 
+	 </nav>
+   </header>
+   <main id="mainContent" class="mainContentUnderStickyHeader mainContentAboveStickyFooter">
+	<section class="container-fluid">
+	    <div id="idWelcomeSubPart" class="defaultSubPart">
+		 Welcome ...
+		</div>
+		<div id="idSubPart_pa" class="alternativeSubPart">
+		 pa ...
+		</div>
+		<div id="idSubPart_pb" class="alternativeSubPart">
+		 pb ...
+		</div>
+	  </section>
+   </main>
+   <footer class="stickyFooter">
+	  <h4>pied de page (liens, mentions légales)</h4>
+   </footer>
+</body>
+
+</html>
