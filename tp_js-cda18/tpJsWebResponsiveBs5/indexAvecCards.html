@@ -87,8 +87,10 @@ window.onload=function(){
       <div class="row m-1">
           <div class="col-sm-6">
              <div class="card m-1">
-                  <div class="card-header bg-primary text-light">addition</div>
-                  <div class="card-body">
+                  <div class="card-header bg-primary text-light">
+                   <a  class="text-light" data-bs-toggle="collapse" data-bs-target="#collapseAddition">addition</a>
+                  </div>
+                  <div id="collapseAddition" class="card-body collapse show">
                       <label>a:</label><input id="txtA" /><br/>
                       <label>b:</label><input id="txtB" /><br/>
                       <input type="button" value="addition" 
