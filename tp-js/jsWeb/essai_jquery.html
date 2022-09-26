@@ -20,6 +20,13 @@
            $("#txtRacine").html(Math.sqrt( Number( $("#txtX").val()) ))
                           .css("color","blue") ;
          });
+
+         //NB: sur une zone de saisie , l'événement "input" (standard html/navigateurs)
+         //correspond à "le texte de la zone a ete modifié par l'utilisateur"
+         $("#txtX").on("input" , function(evt){
+             $("#txtRacine").html(Math.sqrt( Number( $(evt.target).val()) ))
+                            .css("color","green") ;
+         })
          
         
          /*
