@@ -17,6 +17,14 @@ $( function(){
         let p = tabProduits[i];
         $("#tBodyProd").append("<tr><td>"+p.ref+"</td><td>"+p.nom+
                                     "</td><td>"+p.prix+"</td></tr>");
+        /*
+        let ligne = "<tr>";
+        for(let prop in p){ 
+            ligne += "<td>" + p[prop] + "</td>";
+        }   
+        ligne += "</tr>" ;
+        $("#tBodyProd").append(ligne); 
+        */                     
    }
 
 }
