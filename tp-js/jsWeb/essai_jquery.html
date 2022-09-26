@@ -12,11 +12,25 @@
                                     Number( $("#txtEuro").val()) ) ;
          });
 
+         
          $('#btnRacineCarree').on('click',function(){
-          let x=  Number( $("#txtX").val());
-          let racineCarre = Math.sqrt(x);
-           $("#txtRacine").html(racineCarre) ;
+          //let x=  Number( $("#txtX").val());
+          //let racineCarre = Math.sqrt(x);
+          // $("#txtRacine").html(racineCarre) ;
+           $("#txtRacine").html(Math.sqrt( Number( $("#txtX").val()) ))
+                          .css("color","blue") ;
          });
+         
+        
+         /*
+         //version en pur javascript / DOM (sans jquery)
+         document.querySelector("#btnRacineCarree").addEventListener('click' , function(){
+          let x = document.querySelector("#txtX").value;
+          let racineCarree = Math.sqrt(x);
+          document.querySelector("#txtRacine").innerHTML=racineCarree;
+          document.querySelector("#txtRacine").style.color= "blue";
+         });
+         */
 
          // Math.sqrt(x)
       }); 
