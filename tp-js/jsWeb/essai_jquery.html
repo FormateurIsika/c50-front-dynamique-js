@@ -11,6 +11,14 @@
            $("#txtFranc").html( 6.55957 *
                                     Number( $("#txtEuro").val()) ) ;
          });
+
+         $('#btnRacineCarree').on('click',function(){
+          let x=  Number( $("#txtX").val());
+          let racineCarre = Math.sqrt(x);
+           $("#txtRacine").html(racineCarre) ;
+         });
+
+         // Math.sqrt(x)
       }); 
    </script>
   </head>
@@ -21,6 +29,10 @@
        somme en euro : <input type="text" id="txtEuro" /> <br/>
        <input type="button" value="euroToFranc" id="btnEuroToFranc" /> <br/>
        montant equivalent en franc : <span id="txtFranc"/> 
+       <hr/>
+       x : <input type="text" id="txtX" /> <br/>
+       <input type="button" value="racine carree" id="btnRacineCarree" /> <br/>
+       racine carree de x : <span id="txtRacine"/> 
    </form>
   </body>
 </html>
